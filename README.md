@@ -1,11 +1,11 @@
-===============================================================================
+===========================================================================
 
 PROJET/PURPOSE:
 
 UDACITY - DATA SCIENCE project: Data Science Capstone
 
 
-===============================================================================
+===========================================================================
 
 TITLE:
 
@@ -13,15 +13,15 @@ Monitoring per department of the COVID-19 situation in France (16-Dec-2022)
 Rebound of contamination and hospitalization in the last month.
 
 
-===============================================================================
+===========================================================================
 
 DESCRIPTION:
 
 Business Understanding
 
-- Question 1: What is the rate of the population per department which is tested
-   for COVID-19? According to the global health policy, it could allow
-   adjusting locally the communication for increasing test of people. 
+- Question 1: What is the rate of the population per department which is 
+   testedfor COVID-19? According to the global health policy, it could 
+   allow adjusting locally the communication for increasing test of people. 
    
 - Question 2: What is the level of degradation of hospitalized COVID-19 patients
    per department in the last 24h? It could help to quickly identify where to
@@ -40,14 +40,14 @@ Business Understanding
    and increase communication related to safety precaution.
 
 
-===============================================================================
+===========================================================================
 
 DATA UNDERSTANDING:
 	
 Data access:
 
-Data are stored in the csv file named "COVID19_France_data.csv". It is provided
- (below the GITHUB uploading 30Mo-limit) with "," used as separator.
+Data are stored in the csv file named "COVID19_France_data.csv". It is 
+ provided (below the GITHUB uploading 30Mo-limit) with "," used as separator.
 This csv data file is read and transpose in dataframe via the python script
  provided on GITHUB.
 
@@ -81,8 +81,9 @@ Data Description:
 				     resuscitation unit in the last 24h;
 					 
 	'rad'          = cumulative number (int) of patients who where
-					  hospitalized for COVID-19 but back to home due to 
-					  improvement of their health;
+					  hospitalized for COVID-19 but back
+					  to home due to improvement of their
+					  health;
 					  
 	'incid_rad'    = number (float) of the patients back to home in the last
 					  24h;
@@ -108,23 +109,23 @@ Data Description:
 - Description of data - COVID-19 epidemic monitoring indicators:  
   
 	'tx_pos'   = Positivity rate (float) is the number of people tested
-			      positive (RT-PCR or antigenic assay) for the first time in the
-			      last 60 days over the number of people tested (positive or
-			      negative) on a given period, without being tested positive
-			      in the last 60 days;
+	 	      positive (RT-PCR or antigenic assay) for the first time in
+		      last 60 days over the number of people tested (positive or
+		      negative) on a given period, without being tested positive
+		      in the last 60 days;
 				  
 	'tx_incid' = Incidence rate (float) is the number of people tested
-			      positive (RT-PCR or antigenic assay) for the first time in
-				  the last 60 days over the size of population; it is given
-				  for 100 000 of inhabitants;
+		      positive (RT-PCR or antigenic assay) for the first time in
+		      the last 60 days over the size of population; it is given
+		      for 100 000 of inhabitants;
 				  
 	'TO' 	   = Occupancy rate (float) is the number of hostpitalized COVID-19
-		          patients over the initial number of beds at hospital (before 
-				  increase of this number).
+		      patients over the initial number of beds at hospital (before 
+		      increase of this number).
 				  
 	'R' 	   = Virus replication rate (float) is the average number of people
-				  that can be contaminated by a infected person.
-			      R>1, epidemic is spreading. R<1, epidemic is declining.
+		      that can be contaminated by a infected person.
+		      R>1, epidemic is spreading. R<1, epidemic is declining.
 
 		  
 Analysis of the need to answer the questions:
@@ -248,7 +249,8 @@ At a time, it was considered to use 'dep' (departement -string-) values as
  'Modelization'), I decided to not use these dummies.
 
 
-===============================================================================
+===========================================================================
+
 PREPARE DATA 
 
 Data processing:
@@ -261,8 +263,8 @@ According to Question 1, I compute a rate 'nb_test / pop (100 000 hab)',
 
  
 According to Question 2, I compute both rates to monitor in the last 24h 
-  the degradation of health of hospitalized people and people in intensive car
-  unit as follows:
+  the degradation of health of hospitalized people and people in intensive
+  care unit as follows:
 
 - Rate of people admitted in intensive care over people hospitalized:
    'incid_rea' / 'incid_hosp' = 'tx_rea'
@@ -325,7 +327,8 @@ Other scikit's linear models give same results or worst, so I keep this one.
  So my model has a rather satisfactory score.
 
 
-===============================================================================
+===========================================================================
+
 VISUALIZATION:
 
 Visualization required additional processing to get the appropriate values 
@@ -399,7 +402,6 @@ Question 4:
    
    
 Question 5: Modelization
-
    The model to predict COVID-19 positive cases per week gives rather good
    result
     with a global score of 0.88.
@@ -410,7 +412,7 @@ Question 5: Modelization
     and the amount of work in the hospitals despite the vaccination campaign.
 
    
-===============================================================================
+===========================================================================
 
 FINDINGS
 
@@ -433,7 +435,7 @@ Although testing several type of models, I kept the Linear Regression which
 I wonder if some other type of models could be more suitable in this case.
  
 
-===============================================================================
+===========================================================================
 
 VERSION:
 
@@ -450,7 +452,7 @@ In comparison with previous version 1.1.0, this version 1.2.0 brings following
  - The post was totaly rewritten and illustrated.
 
 
-===============================================================================
+===========================================================================
 
 INSTRUCTIONS:
 
@@ -463,7 +465,7 @@ INSTRUCTIONS:
 - then enter "python COVID19_France_process_data.py COVID19_France_data.csv"
 
 			
-===============================================================================			
+===========================================================================
 
 PUBLIC RELEASE:
 
@@ -471,7 +473,7 @@ You can find the published results here:
 https://medium.com/@laurent.jp.costa/rebound-of-covid-19-contamination-in-france-how-we-use-to-live-with-it-d180162048ba
 
 
-===============================================================================
+===========================================================================
 
 ENVIRONMENT:
 
@@ -481,7 +483,7 @@ It may be necessary to install GTK for visualization.
  source code: https://gtk-win.sourceforge.io/home/index.php/Main/Downloads
 
 
-===============================================================================
+===========================================================================
 
 REPOSITORY’S FILES:
 
@@ -494,21 +496,23 @@ File "COVID19_France_process_data.py" - Python script to process and analyze
  the data.
 
 
-===============================================================================
+===========================================================================
 
 DATA SOURCE:
 
 Hospital data: 
 
 - Name: Santé publique France
-- Licence: Open licence version 2.0 / ID 60190d00a7273a8100dd4d38 / (https://www.etalab.gouv.fr/licence-ouverte-open-licence/)
+- Licence: Open licence version 2.0 / ID 60190d00a7273a8100dd4d38 / 
+  (https://www.etalab.gouv.fr/licence-ouverte-open-licence/)
 - Link: https://www.data.gouv.fr/fr/datasets/synthese-des-indicateurs-de-suivi-de-lepidemie-covid-19/
 - Update: 19-Dec-2022
 - Data extraction date: 20-Dec-2022
-- Request for reuse: Indicate the following link in my presentation of results: https://www.data.gouv.fr/fr/datasets/synthese-des-indicateurs-de-suivi-de-lepidemie-covid-19/
+- Request for reuse: Indicate the following link in my presentation of
+  results: https://www.data.gouv.fr/fr/datasets/synthese-des-indicateurs-de-suivi-de-lepidemie-covid-19/
 
 
-===============================================================================
+===========================================================================
 LEGAL:
 
 Reuse and exploitation of source data: Open licence (refer to DATA SOURCE).
